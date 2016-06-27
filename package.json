@@ -16,6 +16,7 @@
     "chai": "^3.5.0",
     "express": "^4.14.0",
     "rethink": "^1.4.0",
+    "rethinkdbdash": "^2.3.12",
     "thinky": "^2.3.2"
   }
 }

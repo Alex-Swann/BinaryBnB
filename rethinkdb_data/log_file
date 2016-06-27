@@ -43,3 +43,11 @@
 2016-06-27T12:49:20.069265000 1196.351385s info: Table a0513dc5-c708-4729-8420-bd6b283a1f18: Starting a new Raft election for term 1.
 2016-06-27T12:49:20.069718000 1196.351838s info: Table a0513dc5-c708-4729-8420-bd6b283a1f18: Added replica on this server.
 2016-06-27T12:49:20.165744000 1196.447864s info: Table a0513dc5-c708-4729-8420-bd6b283a1f18: This server is Raft leader for term 1. Latest log index is 0.
+2016-06-27T15:08:30.546728000 9546.663080s info: Table e8cd264f-3d53-4f9c-af84-9529cb6b0564: Starting a new Raft election for term 1.
+2016-06-27T15:08:30.548204000 9546.664557s info: Table e8cd264f-3d53-4f9c-af84-9529cb6b0564: Added replica on this server.
+2016-06-27T15:08:30.647019000 9546.763371s info: Table e8cd264f-3d53-4f9c-af84-9529cb6b0564: This server is Raft leader for term 1. Latest log index is 0.
+2016-06-27T15:17:39.405944000 10095.510764s notice: Server got SIGINT from pid 5070, uid 501; shutting down...
+2016-06-27T15:17:39.406796000 10095.511617s notice: Shutting down client connections...
+2016-06-27T15:17:39.424484000 10095.529305s notice: All client connections closed.
+2016-06-27T15:17:39.424500000 10095.529319s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2016-06-27T15:17:39.492602000 10095.597423s notice: Storage engine shut down.
