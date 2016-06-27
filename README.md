@@ -13,6 +13,7 @@ Merge!
 # Setting up
 
 ```$ npm install``` to install majics 
+
 ```$ DEBUG=BinaryBnB:* npm start``` to start express server
 
 # MakersBnB
