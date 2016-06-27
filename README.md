@@ -1,12 +1,19 @@
 LAB WEEK! Dev Workflow!
 
 Spec -> User Stories
+
 User Stories -> GitHub Issues
+
 Issue -> Branch (‘Pairing’)
-Branch -> Pull Request (‘Code Review’) ’squirrel'
-Merge
 
+Branch -> Pull Request (‘Code Review’) ’gangta squirrel'
 
+Merge!
+
+# Setting up
+
+```$ npm install``` to install majics 
+```$ DEBUG=BinaryBnB:* npm start``` to start express server
 
 # MakersBnB
 
