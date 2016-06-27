@@ -3,23 +3,28 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
+    "chai": "^3.5.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "express": "^4.14.0",
     "jade": "~1.11.0",
+    "mocha": "^2.5.3",
     "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0",
-    "chai": "^3.5.0",
+    "request": "^2.72.0",
     "rethink": "^1.4.0",
+    "serve-favicon": "~2.3.0",
     "thinky": "^2.3.2"
   },
   "description": "Allows users to list spaces they have available, and to hire spaces for the night.",
   "main": "node ./bin/www",
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^2.5.3"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Alex-Swann/BinaryBnB.git"
