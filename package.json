@@ -1,5 +1,27 @@
 {
   "devDependencies": {
     "chai": "^3.5.0"
-  }
+  },
+  "name": "binarybnb",
+  "description": "LAB WEEK! Dev Workflow!",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "express": "^4.14.0",
+    "rethink": "^1.4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alex-Swann/BinaryBnB.git"
+  },
+  "author": "Elena, Alex, Daniel, Michael",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alex-Swann/BinaryBnB/issues"
+  },
+  "homepage": "https://github.com/Alex-Swann/BinaryBnB#readme"
 }
