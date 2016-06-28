@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../models/User.js');
+var user = require('../models/User.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -8,21 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next){
-  var api = require('../models/User');
-  console.log(user);
-  var user = new User({
-    name: req.param('name'),
-    username: req.param('username'),
-    email: req.param('email'),
-    password_digest: req.param('password_digest')
-  });
-  console.log(user);
-  user.save().then(function(result) {
-    res.json(result);
-  }).error(function(err) {
-    res.json({ message: err });
-  });
-
+  user.create(req, res);
   res.redirect('/new');
 });
 
