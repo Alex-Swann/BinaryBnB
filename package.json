@@ -4,13 +4,16 @@
   "private": true,
   "scripts": {
     "start": "NODE_ENV=dev node ./bin/www",
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "test": "./node_modules/.bin/mocha --reporter spec -R nyan",
+    "selenium": "./node_modules/protractor/bin/webdriver-manager start",
+    "install-selenium": "./node_modules/protractor/bin/webdriver-manager update"
   },
   "dependencies": {
     "babel-polyfill": "^6.9.1",
     "body-parser": "~1.15.1",
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
+    "chai-webdriver": "^1.2.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "dotenv": "^2.0.0",
@@ -18,10 +21,12 @@
     "jade": "~1.11.0",
     "mocha": "^2.5.3",
     "morgan": "~1.7.0",
+    "protractor": "^3.3.0",
     "rethink": "^1.4.0",
     "rethinkdb": "^2.3.2",
     "rethinkdb-setup": "^0.2.0",
     "rethinkdbdash": "^2.3.12",
+    "selenium-webdriver": "^2.53.2",
     "serve-favicon": "~2.3.0",
     "thinky": "^2.3.2"
   },
