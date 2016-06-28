@@ -1,13 +1,7 @@
 /*jshint node:true */
 'use strict';
 
-
-var thinky = require('thinky')({
-	host: 'localhost',
-	port: 28015,
-	db: 'BnB_test'
-});
-
+var thinky = require('../util/thinky.js');
 var r = thinky.r;
 var type = thinky.type;
 
