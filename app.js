@@ -10,8 +10,6 @@ require('dotenv').load();
 
 
 // Need to include ORM models into app.js to work with routes
-var userModel = require('./models/User.js');
-
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
