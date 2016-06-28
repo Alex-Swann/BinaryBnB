@@ -5,6 +5,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var r = require('rethinkdbdash')();
+require('dotenv').load();
+
+
+// Need to include ORM models into app.js to work with routes
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -23,6 +29,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/new', routes);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
