@@ -10,6 +10,7 @@
     "babel-polyfill": "^6.9.1",
     "body-parser": "~1.15.1",
     "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "dotenv": "^2.0.0",
