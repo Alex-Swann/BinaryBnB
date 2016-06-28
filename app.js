@@ -6,8 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var r = require('rethinkdbdash')();
-require('dotenv').load();
-
 
 // Need to include ORM models into app.js to work with routes
 
