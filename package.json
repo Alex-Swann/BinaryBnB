@@ -6,17 +6,19 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "babel-polyfill": "^6.9.1",
     "body-parser": "~1.15.1",
+    "chai": "^3.5.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
-    "express": "~4.13.4",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
     "jade": "~1.11.0",
     "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0",
-    "chai": "^3.5.0",
-    "express": "^4.14.0",
     "rethink": "^1.4.0",
+    "rethinkdb": "^2.3.2",
     "rethinkdbdash": "^2.3.12",
+    "serve-favicon": "~2.3.0",
     "thinky": "^2.3.2"
   }
 }

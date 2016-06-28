@@ -16,6 +16,7 @@ router.post('/', function(req, res, next){
 
   post.saveAll().then(function(result) {
   });
+
   res.redirect('/new');
 });
 
