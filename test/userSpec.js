@@ -22,18 +22,14 @@ describe('User', function(){
           };
 
       user.create(req);
-
+      setTimeout( function () {
+  			thinky.r.db('BnB_test').table('users').count().run().then(function (result) {
+  				console.log(result);
+  				expect(result).to.eq(1);
+  			});
+  		}, 100 );
       done();
     });
 
 
 });
-
-
-
-        // setTimeout( function () {
-        //     thinky.r.db('BnB_test').table('spaces').count().run().then(function (result) {
-        //         console.log(result);
-        //         expect(result).to.eq(2);
-        //     });
-        // }, 100 );
