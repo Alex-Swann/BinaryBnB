@@ -1,24 +1,22 @@
 process.env.NODE_ENV = 'test';
+var app =  require('../../app');
 var Browser = require('zombie');
 var expect  = require("chai").expect;
 var request = require("request");
+var http = require("http");
 require('../globalBefore');
-
-Browser.localhost('localhost:', 3000);
 
 describe('User visits signup page', function() {
 
+  before(function (done) {
 
-  var browser = new Browser();
-
-  before(function(done) {
-    browser.visit('/', done);
+    this.browser.visit('/', done);
   });
 
   describe('submits form', function() {
 
     before(function(done) {
-      browser
+      this.browser
         .fill('name', 'Al')
         .fill('username', 'alex427')
         .fill('email',    'zombie@underworld.dead')
@@ -27,11 +25,11 @@ describe('User visits signup page', function() {
     });
 
     it('should be successful', function() {
-      browser.assert.success();
+      this.browser.assert.success();
     });
 
     it('should see welcome page', function() {
-      browser.assert.text('p', 'Welcome to BnB sign in Sign In Page');
+      this.browser.assert.text('p', 'Welcome to BnB sign in Sign In Page');
     });
   });
 });

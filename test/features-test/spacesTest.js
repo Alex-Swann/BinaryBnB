@@ -10,8 +10,7 @@ require('../globalBefore');
 
 describe("Spaces view page", function () {
   before(function () {
-    this.server = http.createServer(app).listen(3000);
-    this.browser = new Browser({site: 'http://localhost:3000'});
+    
   });
 
   beforeEach(function (done){
