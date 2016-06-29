@@ -14,10 +14,10 @@ var Space = thinky.createModel("spaces", {
 
 exports.create = function(req, res) {
   Space.save({
-    name: req.param.name,
-    description: req.param.description,
-    price: req.param.price,
-    availablefrom: req.param.availablefrom,
-    availableto: req.param.availablet
+    name: req.body.name,
+    description: req.body.description,
+    price: req.body.price,
+    availablefrom: req.body.availablefrom,
+    availableto: req.body.availableto
   })
 }

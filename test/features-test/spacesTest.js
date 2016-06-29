@@ -44,7 +44,7 @@ describe("Spaces view page", function () {
     browser.clickLink('List a space').then( function() {
       browser.fill('name', 'Pimp cribz YO')
              .fill('description', 'Mad chill cribz YO')
-             .fill('price', '22.55')
+             .fill('price', '22.53')
              .fill('availablefrom', '30/06/2016')
              .fill('availableto', '30/07/2016')
              .pressButton('List My Space', function(err){
