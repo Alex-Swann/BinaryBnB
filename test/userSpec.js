@@ -14,7 +14,7 @@ describe('User', function(){
     it('should save a new user', function(done){
       var req =  {
             body: {
-              name: 'Porno',
+              name: 'YourMum',
               username: 'alex427',
               email: 'zombie@underworld.dead',
               password: 'eat-the-living'

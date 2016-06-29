@@ -8,6 +8,7 @@ Browser.localhost('localhost:', 3000);
 
 describe('User visits signup page', function() {
 
+
   var browser = new Browser();
 
   before(function(done) {
