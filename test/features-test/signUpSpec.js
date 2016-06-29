@@ -1,21 +1,36 @@
+var Browser = require('zombie');
 var expect  = require("chai").expect;
 var request = require("request");
-var chai = require('chai');
-var chaiHttp = require('chai-http');
-
-chai.use(chaiHttp);
-
 require('../globalBefore');
 
-describe('User', function(){
-  var user;
+Browser.localhost('localhost:', 3000);
 
-  beforeEach(function(){
-      user = new User();
+
+describe('User visits signup page', function() {
+
+  var browser = new Browser();
+
+  before(function(done) {
+    browser.visit('/', done);
   });
 
-  it('should save a new user', function(){
+  describe('submits form', function() {
 
+    before(function(done) {
+      browser
+        .fill('name', 'Al')
+        .fill('username', 'alex427')
+        .fill('email',    'zombie@underworld.dead')
+        .fill('password', 'eat-the-living')
+        .pressButton('Submit', done);
+    });
+
+    it('should be successful', function() {
+      browser.assert.success();
+    });
+
+    it('should see welcome page', function() {
+      browser.assert.text('p', 'Welcome to BnB sign in Sign In Page');
+    });
   });
-
 });

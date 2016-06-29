@@ -4,9 +4,7 @@
   "private": true,
   "scripts": {
     "start": "NODE_ENV=dev node ./bin/www",
-    "test": "./node_modules/.bin/mocha --reporter spec -R nyan",
-    "selenium": "./node_modules/protractor/bin/webdriver-manager start",
-    "install-selenium": "./node_modules/protractor/bin/webdriver-manager update"
+    "test": "./node_modules/.bin/mocha --reporter spec -R nyan"
   },
   "dependencies": {
     "babel-polyfill": "^6.9.1",
@@ -21,14 +19,13 @@
     "mocha": "^2.5.3",
     "morgan": "~1.7.0",
     "request": "^2.72.0",
-    "protractor": "^3.3.0",
     "rethink": "^1.4.0",
     "rethinkdb": "^2.3.2",
     "rethinkdb-setup": "^0.2.0",
     "rethinkdbdash": "^2.3.12",
-    "selenium-webdriver": "^2.53.2",
     "serve-favicon": "~2.3.0",
-    "thinky": "^2.3.2"
+    "thinky": "^2.3.2",
+    "zombie": "^4.2.1"
   },
   "description": "Allows users to list spaces they have available, and to hire spaces for the night.",
   "main": "node ./bin/www",
