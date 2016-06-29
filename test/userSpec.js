@@ -1,31 +1,39 @@
-var Browser = require('zombie');
 var expect  = require("chai").expect;
-var request = require("request");
-require('./globalBefore');
+var thinky = require('../util/thinky.js');
+var r = thinky.r;
+var type = thinky.type;
 var user = require('../models/User');
 
-Browser.localhost('localhost:', 3000);
+require('./globalBefore');
+
+
+
 
 describe('User', function(){
 
-  var browser = new Browser();
+    it('should save a new user', function(done){
+      var req =  {
+            body: {
+              name: 'Porno',
+              username: 'alex427',
+              email: 'zombie@underworld.dead',
+              password: 'eat-the-living'
+            }
+          };
 
-  before(function(done) {
-    browser.visit('/', done);
-  });
+      user.create(req);
 
-  before(function(done) {
-      browser
-        .fill('name', 'Al')
-        .fill('username', 'alex427')
-        .fill('email',    'zombie@underworld.dead')
-        .fill('password', 'eat-the-living')
-        .pressButton('Submit', done);
-  });
+      done();
+    });
 
-
-  it('should save a new user', function(){
-    
-  });
 
 });
+
+
+
+        // setTimeout( function () {
+        //     thinky.r.db('BnB_test').table('spaces').count().run().then(function (result) {
+        //         console.log(result);
+        //         expect(result).to.eq(2);
+        //     });
+        // }, 100 );

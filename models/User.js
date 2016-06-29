@@ -16,10 +16,10 @@ var User = thinky.createModel("users", {
 
 exports.create = function (req, res) {
 	var user = new User({
-		name: req.param('name'),
-		username: req.param('username'),
-		email: req.param('email'),
-		password_digest: req.param('password_digest')
+		name: req.body.name,
+		username: req.body.username,
+		email: req.body.email,
+		password_digest: req.body.password_digest
 	});
 
 	user.save();
@@ -28,11 +28,12 @@ exports.create = function (req, res) {
 // module.exports = User;
 
 exports.list = function (req, res) {
-	var user = new User();
-	User.run();
+	User.count().execute().then(function(total){
+		console.log(total + 'users on the database');
+	});
 };
 
-
+console.log( r.table("users").count().run() );
 
 
 

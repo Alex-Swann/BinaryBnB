@@ -1,3 +1,4 @@
+process.env.NODE_ENV = 'test';
 var Browser = require('zombie');
 var expect  = require("chai").expect;
 var request = require("request");
