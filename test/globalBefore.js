@@ -4,6 +4,6 @@ var thinky = require('../util/thinky.js');
 
 before(function(done) {
   console.log("Cleaning DB...");
-  console.log(thinky.r.table('users').delete().run());
+  console.log("\t"+thinky.r.table('users').delete().run());
   done();
 })

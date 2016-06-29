@@ -1,6 +1,7 @@
 var expect  = require("chai").expect;
 var request = require("request");
-require('./globalBefore')
+
+require('./globalBefore');
 
 describe("Binary BnB", function() {
 

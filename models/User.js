@@ -19,16 +19,11 @@ var User = thinky.createModel("users", {
 
 
 exports.create = function (req, res) {
-	var user = new User({
+	User.save({
 		name: req.param('name'),
 		username: req.param('username'),
 		email: req.param('email'),
 		password_digest: req.param('password_digest')
-	});
-	user.save().then(function(result) {
-		res.json(result);
-	}).error(function(err) {
-		res.json({ message: err });
 	});
 };
 
