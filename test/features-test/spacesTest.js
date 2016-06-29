@@ -31,4 +31,26 @@ describe("Spaces view page", function () {
       assert.equal(browser.text('h2'), "List a new space");
     }).then(done, done);
   });
+
+  it('has a form', function(done) {
+    var browser = this.browser;
+    browser.clickLink('List a space').then( function () {
+      browser.assert.attribute('form', 'action', '/spaces/new')
+    }).then(done, done);
+  })
+
+  it('submits a form', function(done) {
+    var browser = this.browser;
+    browser.clickLink('List a space').then( function() {
+      browser.fill('name', 'Pimp cribz YO')
+             .fill('description', 'Mad chill cribz YO')
+             .fill('price', '22.55')
+             .fill('available-from', '30/06/2016')
+             .fill('available-to', '30/07/2016')
+             .pressButton('List My Space', done);
+      browser.assert.success();
+    }).then(done, done);
+  })
+
+
 });
