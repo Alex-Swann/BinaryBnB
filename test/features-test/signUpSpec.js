@@ -6,7 +6,7 @@ require('../globalBefore');
 Browser.localhost('localhost:', 3000);
 
 
-describe('User visits signup page', function() {
+xdescribe('User visits signup page', function() {
 
   var browser = new Browser();
 
