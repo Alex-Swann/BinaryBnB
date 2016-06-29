@@ -6,4 +6,4 @@ before(function(done) {
   console.log("Cleaning DB...");
   console.log("\t"+thinky.r.table('users').delete().run());
   done();
-})
+});

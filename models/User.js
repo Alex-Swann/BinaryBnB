@@ -13,30 +13,28 @@ var User = thinky.createModel("users", {
 	password_digest: type.string().max(60)
 });
 
-//
-// User.ensureIndex('id');
-
-
 
 exports.create = function (req, res) {
-	User.save({
+	var user = new User({
 		name: req.param('name'),
 		username: req.param('username'),
 		email: req.param('email'),
 		password_digest: req.param('password_digest')
 	});
+
+	user.save();
 };
 
 // module.exports = User;
 
-	// exports.list = function (req, res) {
-		//     User.orderBy({ index: r.desc('id') }).run().then(function(people) {
-			//       res.json(people);
-		//     }).error(function(err) {
-			//       res.json({ message: err });
-		//     });
-	// };
-	// //
+exports.list = function (req, res) {
+	var user = new User();
+	User.run();
+};
+
+
+
+
 
 	//
 	// exports.get = function (req, res) {
