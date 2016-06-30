@@ -3,9 +3,8 @@ var router = express.Router();
 var space = require('../models/Space')
 
 
-/* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render('spaces/index', { title: 'Spaces' });
+  space.fetch(req, res);
 });
 
 router.get('/new', function(req, res, next) {
@@ -16,5 +15,7 @@ router.post('/new', function(req, res, next) {
   space.create(req, res);
   res.redirect('/spaces');
 })
+
+
 
 module.exports = router;
