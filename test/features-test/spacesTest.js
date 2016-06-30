@@ -1,6 +1,6 @@
 process.env.NODE_ENV = 'test';
 
-var app =  require('../../app')
+var app =  require('../../app');
 var Browser = require('zombie');
 var assert  = require("assert");
 var request = require("request");
@@ -10,7 +10,7 @@ require('../globalBefore');
 
 describe("Spaces view page", function () {
   before(function () {
-    
+
   });
 
   beforeEach(function (done){
@@ -34,9 +34,9 @@ describe("Spaces view page", function () {
   it('has a form', function(done) {
     var browser = this.browser;
     browser.clickLink('List a space').then( function () {
-      browser.assert.attribute('form', 'action', '/spaces/new')
+      browser.assert.attribute('form', 'action', '/spaces/new');
     }).then(done, done);
-  })
+  });
 
   it('submits a form', function(done) {
     var browser = this.browser;
@@ -50,7 +50,7 @@ describe("Spaces view page", function () {
                assert.ok(browser.success);
              });
     }).then(done, done);
-  })
+  });
 
 
 
