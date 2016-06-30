@@ -11,6 +11,10 @@ require('./globalBefore');
 
 describe('User', function(){
 
+    // beforeEach(function()
+    //
+    // )
+
     it('should save a new user', function(done){
       var req =  {
             body: {
@@ -24,12 +28,13 @@ describe('User', function(){
       user.create(req);
       setTimeout( function () {
   			thinky.r.db('BnB_test').table('users').count().run().then(function (result) {
-  				console.log(result);
   				expect(result).to.eq(1);
   			});
   		}, 100 );
       done();
     });
 
-
+//     it('should log in a new user', function() {
+//
+//     });
 });
