@@ -13,44 +13,20 @@ require('../globalBefore');
 
 describe('Log in Feature', function() {
 
-  before(function (done) {
-    var req =  {
-          body: {
-            name: 'KLAX',
-            username: 'alex427',
-            email: 'zombie@underworld.dead',
-            password: 'eat-the-living'
-          }
-        };
-
-    user.create(req);
-    done();
-  });
-
-  beforeEach(function (done){
+  before(function (done){
     this.browser.visit('/new', done);
   });
 
-  it('should be successful', function() {
-    this.browser.assert.text('p', 'Welcome to BnB sign in Sign In Page');
+  beforeEach(function(done) {
+    this.browser
+      .fill('email',    'zombie@underworld.dead')
+      .fill('password', 'eat-the-living')
+      .pressButton('Submit', done);
   });
 
-  describe('Log In', function(){
-
-    before(function(done) {
-      this.browser
-        .fill('email',    'zombie@underworld.dead')
-        .fill('password', 'eat-the-living')
-        .pressButton('Submit', done);
-    });
-
-    it('sign in', function(){
-      this.browser.assert.text('p', 'Welcome YourMum');
-    });
-
-
+  it('sign in', function(){
+    this.browser.assert.text('p', 'Welcome KLAX');
   });
-
 
 
 });

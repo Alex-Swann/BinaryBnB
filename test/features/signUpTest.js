@@ -22,7 +22,7 @@ describe('User visits signup page', function() {
       this.browser
         .fill('name', 'Al')
         .fill('username', 'alex427')
-        .fill('email',    'zombie@underworld.dead')
+        .fill('email',    'human@daworld.dead')
         .fill('password', 'eat-the-living')
         .pressButton('Submit', done);
     });
@@ -36,9 +36,11 @@ describe('User visits signup page', function() {
     });
 
     it('adds a user to the database', function() {
-      thinky.r.db('BnB_test').table('users').run().then(function (result) {
-        expect(result[0]['email']).to.eq('zombie@underworld.dead');
-      });
+      setTimeout( function () {
+        thinky.r.db('BnB_test').table('users').count().run().then(function (result) {
+          expect(result).to.eq(2);
+        });
+      }, 100 );
     });
   });
 

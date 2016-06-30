@@ -28,7 +28,6 @@ exports.authenticate = function (req, res) {
 				if (people[i].password === req.body.password) {
 					res.currentUser = people[i];
           req.session.object = res.currentUser
-          console.log('============0')
           res.redirect('/spaces');
 				}
 			}
