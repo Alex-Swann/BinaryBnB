@@ -20,4 +20,9 @@ router.post('/new', function(req,res,next){
   user.authenticate(req, res);
 });
 
+router.post('/signOut', function(req,res,next) {
+  req.session.destroy();
+  res.redirect('/spaces')
+});
+
 module.exports = router;

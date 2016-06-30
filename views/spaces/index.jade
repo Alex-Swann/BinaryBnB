@@ -1,4 +1,8 @@
 block content
   h2 #{title}
-  p Welcome #{user.name}
+  form(action='/signOut', method='post')
+    input(type='submit', value='Sign Out')
+    - if(user)
+      p
+        | Welcome #{user.name}
   a.button(href="spaces/new") List a space
