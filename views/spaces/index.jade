@@ -2,19 +2,19 @@ block content
   h2 #{title}
   a.button(href="spaces/new") List a space
 
-
   ul#spaces
+  - for (var i = 0; i < spaces.length; i++)
     li
-      h4.name
+      h4.name #{spaces[i].name}
       ul
         li
           | Price: £
-          span.price
+          span.price #{spaces[i].price}
         li
           | Description:
-          span.description
+          span.description #{spaces[i].description}
         li
           | Availability:
-          span.availablefrom
+          span.availablefrom #{spaces[i].availablefrom}
           | -
-          span.availableto
+          span.availableto #{spaces[i].availableto}

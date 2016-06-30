@@ -23,9 +23,8 @@ exports.create = function(req, res) {
 };
 
 exports.fetch = function(req, res) {
-
   Space.run().then(function(spaces) {
-    res.json(spaces);
+    res.render('spaces/index', { title: 'Spaces', spaces: spaces });
   })
 
 };

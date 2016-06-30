@@ -3,10 +3,8 @@ var router = express.Router();
 var space = require('../models/Space')
 
 
-/* GET users listing. */
 router.get('/', function(req, res, next) {
-  space.fetch(res);
-  res.render('spaces/index', { title: 'Spaces' });
+  space.fetch(req, res);
 });
 
 router.get('/new', function(req, res, next) {
