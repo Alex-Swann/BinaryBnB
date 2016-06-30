@@ -1,8 +1,26 @@
 block content
   h2 #{title}
+
   form(action='/signOut', method='post')
     input(type='submit', value='Sign Out')
     - if(user)
       p
         | Welcome #{user.name}
   a.button(href="spaces/new") List a space
+
+  ul#spaces
+    - for (var i = 0; i < spaces.length; i++)
+      li
+        h4.name #{spaces[i].name}
+        ul
+          li
+            | Price: £
+            span.price #{spaces[i].price}
+          li
+            | Description:
+            span.description #{spaces[i].description}
+          li
+            | Availability:
+            span.availablefrom #{spaces[i].availablefrom}
+            | -
+            span.availableto #{spaces[i].availableto}

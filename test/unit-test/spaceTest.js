@@ -3,7 +3,6 @@ var thinky = require('../../util/thinky');
 var r = thinky.r;
 var type = thinky.type;
 var space = require("../../models/Space");
-
 require('../globalBefore');
 
 describe("Space Unit test", function() {
@@ -18,12 +17,11 @@ describe("Space Unit test", function() {
 		    availableto: "12/03/2015"
 			}
 		};
-		
+
 		space.create(req);
 
 		setTimeout( function () {
 			thinky.r.db('BnB_test').table('spaces').count().run().then(function (result) {
-				console.log(result);
 				expect(result).to.eq(2);
 			});
 		}, 100 );

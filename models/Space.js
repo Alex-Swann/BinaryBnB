@@ -19,6 +19,12 @@ exports.create = function(req, res) {
     price: req.body.price,
     availablefrom: req.body.availablefrom,
     availableto: req.body.availableto
-  })
-}
+  });
+};
 
+exports.fetch = function(req, res) {
+  Space.run().then(function(spaces) {
+    res.render('spaces/index', { title: 'Spaces', spaces: spaces });
+  })
+
+};

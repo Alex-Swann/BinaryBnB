@@ -3,7 +3,6 @@ var router = express.Router();
 var space = require('../models/Space');
 
 
-/* GET users listing. */
 router.get('/', function(req, res, next) {
   res.render('spaces/index', { title: 'Spaces', user: req.session.object });
 });
@@ -16,5 +15,7 @@ router.post('/new', function(req, res, next) {
   space.create(req, res);
   res.redirect('/spaces');
 });
+
+
 
 module.exports = router;
