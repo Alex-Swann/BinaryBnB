@@ -17,7 +17,6 @@ router.get('/new', function(req,res,next){
 });
 
 router.post('/new', function(req,res,next){
-  console.log(req.body.email);
   user.authenticate(req, res);
 });
 
