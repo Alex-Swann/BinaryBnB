@@ -1,3 +1,20 @@
 block content
   h2 #{title}
   a.button(href="spaces/new") List a space
+
+
+  ul#spaces
+    li
+      h4.name
+      ul
+        li
+          | Price: £
+          span.price
+        li
+          | Description:
+          span.description
+        li
+          | Availability:
+          span.availablefrom
+          | -
+          span.availableto

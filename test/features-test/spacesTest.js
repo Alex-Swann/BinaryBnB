@@ -53,7 +53,13 @@ describe("Spaces view page", function () {
     }).then(done, done);
   })
 
-
-
+  it('lists spaces', function() {
+    assert.ok(this.browser.success);
+    assert.equal(this.browser.text('#spaces li:nth-child(1) h4.name'), 'Pimp cribz YO');
+    assert.equal(this.browser.text('#spaces li:nth-child(1) li:nth-child(1) span'), '22.53');
+    assert.equal(this.browser.text('#spaces li:nth-child(1) ul li:nth-child(2) span'), 'Mad chill cribz YO');
+    assert.equal(this.browser.text('#spaces li:nth-child(1) ul li:nth-child(3) span.availablefrom'), '30/06/2016');
+    assert.equal(this.browser.text('#spaces li:nth-child(1) ul li:nth-child(3) span.availableto'), '30/07/2016');
+  })
 
 });
