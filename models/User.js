@@ -22,6 +22,18 @@ exports.create = function (req, res) {
 	});
 };
 
+exports.authenticate = function (req, res) {
+     User.filter({ "email": req.body.email }).run().then(function(people) {
+		  JSON.parse(res.json(people));
+	    });
+
+  // if(user && req.body.password === user.password){
+  //   return user;
+  // } else {
+  //   return null;
+  // }
+}
+
 // module.exports = User;
 
 // exports.list = function (req, res) {

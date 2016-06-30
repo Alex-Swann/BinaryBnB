@@ -9,9 +9,6 @@ var http = require("http");
 require('../globalBefore');
 
 describe("Spaces view page", function () {
-  before(function () {
-
-  });
 
   beforeEach(function (done){
     this.browser.visit('/spaces', done);

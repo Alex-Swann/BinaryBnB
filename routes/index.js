@@ -16,4 +16,9 @@ router.get('/new', function(req,res,next){
   res.render('sessions/signIn', {title: 'BnB sign in'});
 });
 
+router.post('/new', function(req,res,next){
+  console.log(req.body.email);
+  user.authenticate(req, res);
+});
+
 module.exports = router;
