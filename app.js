@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session')
 
 var r = require('rethinkdbdash')();
 
@@ -25,6 +26,11 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({resave: true, saveUninitialized: true, secret: 'SOMERANDOMSECRETHERE', cookie: { maxAge: 60000 }}));
+app.use(function(req,res,next){
+    res.locals.session = req.session;
+    next();
+});
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);

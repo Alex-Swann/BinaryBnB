@@ -5,8 +5,7 @@ var space = require('../models/Space');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  console.log(res.currentUser);
-  res.render('spaces/index', { title: 'Spaces', user: res.currentUser });
+  res.render('spaces/index', { title: 'Spaces', user: req.session.object });
 });
 
 router.get('/new', function(req, res, next) {
