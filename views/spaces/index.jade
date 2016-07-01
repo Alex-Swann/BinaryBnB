@@ -6,7 +6,9 @@ block content
     #welcomeUser
       | Welcome #{user.name}
 
-    a.button(href="spaces/new") List a space
+    a.button(href="spaces/new", class='space') List a space
+    br
+    a.button(href="requests/new", class='request') Make a Request
 
   ul#spaces
     - for (var i = 0; i < spaces.length; i++)

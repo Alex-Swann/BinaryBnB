@@ -3,6 +3,7 @@ var app =  require('../../app');
 var Browser = require('zombie');
 var chai = require('chai');
 var expect  = require("chai").expect;
+var assert = require('assert');
 var thinky = require('../../util/thinky.js');
 var r = thinky.r;
 var type = thinky.type;
@@ -11,39 +12,33 @@ var http = require("http");
 var user = require('../../models/User');
 require('../globalBefore');
 
+describe('Making a Request', function(){
 
-describe('When logged in', function() {
-
-  before(function (done){
+  before(function(done){
+    var browser = this.browser;
     this.browser.visit('/new', done);
   });
 
   beforeEach(function(done) {
+    var browser = this.browser;
     this.browser
       .fill('email',    'zombie@underworld.dead')
       .fill('password', 'eat-the-living')
       .pressButton('Submit', done);
   });
 
-  it('displays name', function(){
-    this.browser.assert.text('#welcomeUser', 'Welcome KLAX');
-    this.browser.assert.element('form');
-    this.browser.assert.element('#SignOut');
+  it('has a title and a button', function(){
+    var browser = this.browser;
+    assert.ok(browser.success);
+    assert.equal(browser.text('a.button#request'), 'Make a Request');
   });
 
-});
-
-describe('When logged out', function(){
-
-  before(function (done){
-    this.browser.pressButton('#SignOut', function(err){
-      done();
-    });
+  it('navigates to making a request', function(done){
+    var browser = this.browser;
+    browser.clickLink('Make a Request').then(function(){
+      assert.ok(browser.success);
+      assert.equal(browser.text('h2'), 'Make a new Request');
+    }).then(done, done);
   });
 
-  it('does not display name', function(done){
-    expect(this.browser.query("#welcomeUser")).not.to.exist;
-    expect(this.browser.query("a.button")).not.to.exist;
-    done();
-  });
 });
