@@ -1,6 +1,12 @@
 block content
   h2 #{title}
-  a.button(href="spaces/new") List a space
+  - if(user)
+    form(action='/signOut', method='post')
+      input(type='submit', value='Sign Out' id='SignOut')
+    #welcomeUser
+      | Welcome #{user.name}
+
+    a.button(href="spaces/new") List a space
 
   ul#spaces
     - for (var i = 0; i < spaces.length; i++)

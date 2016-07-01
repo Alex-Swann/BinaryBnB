@@ -4,7 +4,7 @@ var user = require('../models/User.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Binary BnB' });
+  res.render('users/index', { title: 'Binary BnB' });
 });
 
 router.post('/', function(req, res, next){
@@ -13,7 +13,16 @@ router.post('/', function(req, res, next){
 });
 
 router.get('/new', function(req,res,next){
-  res.render('signIn', {title: 'BnB sign in'});
+  res.render('sessions/signIn', {title: 'BnB sign in'});
+});
+
+router.post('/new', function(req,res,next){
+  user.authenticate(req, res);
+});
+
+router.post('/signOut', function(req,res,next) {
+  req.session.destroy();
+  res.redirect('/spaces')
 });
 
 module.exports = router;

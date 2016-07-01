@@ -1,6 +1,6 @@
 process.env.NODE_ENV = 'test';
 
-var app =  require('../../app')
+var app =  require('../../app');
 var Browser = require('zombie');
 var assert  = require("assert");
 var request = require("request");
@@ -9,13 +9,16 @@ var http = require("http");
 require('../globalBefore');
 
 describe("Spaces view page", function () {
-  before(function () {
-    this.server = http.createServer(app).listen(3000);
-    this.browser = new Browser({site: 'http://localhost:3000'});
-  });
 
   beforeEach(function (done){
-    this.browser.visit('/spaces', done);
+    var browser = this.browser;
+      browser.visit('/new').then(function(){
+          browser.fill('email', 'zombie@underworld.dead')
+                 .fill('password', 'eat-the-living')
+                 .pressButton('Submit', function(err){
+                  done();
+                  });
+      });
   });
 
   it('has a title and a button', function () {
@@ -35,9 +38,9 @@ describe("Spaces view page", function () {
   it('has a form', function(done) {
     var browser = this.browser;
     browser.clickLink('List a space').then( function () {
-      browser.assert.attribute('form', 'action', '/spaces/new')
+      browser.assert.attribute('form', 'action', '/spaces/new');
     }).then(done, done);
-  })
+  });
 
   it('submits a form', function(done) {
     var browser = this.browser;
@@ -51,7 +54,7 @@ describe("Spaces view page", function () {
                assert.ok(browser.success);
              });
     }).then(done, done);
-  })
+  });
 
   it('lists spaces', function() {
     assert.ok(this.browser.success);

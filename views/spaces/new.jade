@@ -1,5 +1,7 @@
 block content
   h2 #{title}
+  input(type='submit', value='Sign Out')
+
   form(action='/spaces/new', method='post')
     label(for='name') Name:
     input(type='text', name='name', placeholder='Name')
