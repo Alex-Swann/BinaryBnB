@@ -1,0 +1,13 @@
+extends ../layout.jade
+block content
+  h2 #{title}
+
+  form(action='/requests/new' method='post')
+    input(type='hidden' name='spaceId' value='#{spaceId}')
+    input(type='hidden' name='userId' value='#{userId}')
+    label(for='availablefrom') Available from (DD/MM/YYYY)
+    input(type='date', name='availablefrom')
+    label(for='availableto') Available to (DD/MM/YYYY)
+    input(type='date', name='availableto')
+
+    input(type='submit', value='Make a Booking')

@@ -6,8 +6,12 @@ block content
 
   ul#spaces
     - for (var i = 0; i < spaces.length; i++)
-      li(id="eachSpace")
-        h4.name #{spaces[i].name}
+      li
+        h4 #{spaces[i].name}
+        form(action='/requests', method='post', class="inline")
+          input(type='hidden' name='userId' value='#{user.id}')
+          input(type='hidden' name='spaceId' value='#{spaces[i].id}')
+          input(type='submit', value='Request this space' id='request')
         ul
           li
             | Price: £
