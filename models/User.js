@@ -1,4 +1,3 @@
-/*jshint node:true */
 'use strict';
 
 var thinky = require('../util/thinky');
@@ -13,7 +12,7 @@ var User = thinky.createModel("users", {
 });
 
 
-exports.create = function (req, res) {
+User.create = function (req, res) {
 	User.save({
 		name: req.body.name,
 		username: req.body.username,
@@ -22,7 +21,7 @@ exports.create = function (req, res) {
 	});
 };
 
-exports.authenticate = function (req, res) {
+User.authenticate = function (req, res) {
   	User.filter({ "email": req.body.email }).run().then(function(people) {
 				if (people[0].password === req.body.password) {
           req.session.object = people[0];
@@ -30,3 +29,9 @@ exports.authenticate = function (req, res) {
 				}
 		});
 };
+
+module.exports = User;
+
+var Space = require('./Space');
+
+User.hasMany(Space, 'spaces', 'id', 'userId');
