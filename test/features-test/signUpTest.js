@@ -38,7 +38,7 @@ describe('User visits signup page', function() {
     it('adds a user to the database', function() {
       setTimeout( function () {
         thinky.r.db('BnB_test').table('users').count().run().then(function (result) {
-          expect(result).to.eq(3);
+          expect(result).to.eq(2);
         });
       }, 100 );
     });
