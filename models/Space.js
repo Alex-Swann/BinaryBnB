@@ -33,9 +33,9 @@ Space.fetch = function(req, res) {
 
 };
 
-exports.get = function(req, res) {
-  Space.run().then(function(spaces) {
-    res.render('requests/new', { title: 'Requests', spaces: spaces,  user: req.session.object });
+Space.get = function(req, res) {
+  Space.run().then(function(space) {
+    res.render('requests/new', { title: 'Requests', space: space,  user: req.session.object});
   });
 
 };
@@ -43,5 +43,6 @@ exports.get = function(req, res) {
 module.exports = Space;
 
 var User = require('./User');
-
+var Request = require('./Request');
 Space.belongsTo(User, 'user', 'userId', 'id');
+Space.hasMany(Request, 'requests', 'id', 'requestId');

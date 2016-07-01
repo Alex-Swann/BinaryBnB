@@ -32,7 +32,7 @@ describe('Making a Request', function(){
     assert.ok(browser.success);
     assert.equal(browser.text('a.button.request'), 'Make a Request');
 
-    browser.clickLink('Make a Request').then(function(done){
+    browser.clickLink('Pimp cribz YO').then(function(done){
       assert.ok(browser.success);
       assert.equal(browser.text('h2'), 'Make a new Request');
     }).then(done, done);

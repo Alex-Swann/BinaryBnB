@@ -33,5 +33,7 @@ User.authenticate = function (req, res) {
 module.exports = User;
 
 var Space = require('./Space');
+var Request = require('./Request');
 
 User.hasMany(Space, 'spaces', 'id', 'userId');
+User.hasMany(Request, 'requests', 'id', 'requestId');
