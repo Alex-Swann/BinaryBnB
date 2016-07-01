@@ -1,3 +1,4 @@
+/* jshint node: true */
 'use strict';
 
 var thinky = require('../util/thinky');
@@ -25,6 +26,13 @@ exports.create = function(req, res) {
 exports.fetch = function(req, res) {
   Space.run().then(function(spaces) {
     res.render('spaces/index', { title: 'Spaces', spaces: spaces,  user: req.session.object });
-  })
+  });
+
+};
+
+exports.get = function(req, res) {
+  Space.run().then(function(spaces) {
+    res.render('requests/new', { title: 'Requests', spaces: spaces,  user: req.session.object });
+  });
 
 };

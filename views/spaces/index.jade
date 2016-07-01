@@ -7,13 +7,12 @@ block content
       | Welcome #{user.name}
 
     a.button(href="spaces/new", class='space') List a space
-    br
-    a.button(href="requests/new", class='request') Make a Request
+
 
   ul#spaces
     - for (var i = 0; i < spaces.length; i++)
       li
-        h4.name #{spaces[i].name}
+        a.button(href="requests/new", class='request') #{spaces[i].name}
         ul
           li
             | Price: £

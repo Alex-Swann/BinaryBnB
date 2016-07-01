@@ -38,4 +38,15 @@ describe('Making a Request', function(){
     }).then(done, done);
   });
 
+  it('can make a request', function(){
+    var browser = this.browser;
+    browser.clickLink('Make a Request').then(function(){
+      browser.select('requests', 'Pimp cribz YO');
+    }).then(done, done);
+
+  });
+
+
+
+
 });

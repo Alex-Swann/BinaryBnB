@@ -22,7 +22,7 @@ router.post('/new', function(req,res,next){
 
 router.post('/signOut', function(req,res,next) {
   req.session.destroy();
-  res.redirect('/spaces')
+  res.redirect('/spaces');
 });
 
 module.exports = router;
