@@ -1,16 +1,12 @@
+extends ../layout.jade
 block content
   h2 #{title}
   - if(user)
-    form(action='/signOut', method='post')
-      input(type='submit', value='Sign Out' id='SignOut')
-    #welcomeUser
-      | Welcome #{user.name}
-
     a.button(href="spaces/new") List a space
 
   ul#spaces
     - for (var i = 0; i < spaces.length; i++)
-      li
+      li(id="eachSpace")
         h4.name #{spaces[i].name}
         ul
           li
