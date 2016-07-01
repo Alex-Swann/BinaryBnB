@@ -1,7 +1,7 @@
+extends ../layout.jade
 block content
   - if(user)
     h2 #{title}
-    input(type='submit', value='Sign Out')
 
     form(action='/spaces/new', method='post')
       input(type="hidden" name="userId" value="#{user.id}")

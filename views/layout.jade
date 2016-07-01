@@ -3,6 +3,17 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/js/script.js')
   body
-    block content
-    
+    .header
+      h1 BinaryBnB
+      .nav
+        -if(user)
+          form(id='SignOutForm', class="inline" action='/signOut', method='post')
+            input(type='submit', value='Sign Out' id='SignOut')
+        -else
+          a(href="/new") Login
+          a(href="/") Register
+        a(href="/spaces") See Spaces
+    .content
+      block content

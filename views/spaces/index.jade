@@ -1,19 +1,14 @@
+extends ../layout.jade
 block content
   h2 #{title}
   - if(user)
-    form(action='/signOut', method='post')
-      input(type='submit', value='Sign Out' id='SignOut')
-    #welcomeUser
-      | Welcome #{user.name}
-
-    a.button(href="spaces/new", class='space') List a space
-
+    a.button(href="spaces/new") List a space
 
   ul#spaces
     - for (var i = 0; i < spaces.length; i++)
       li
         h4 #{spaces[i].name}
-        form(action='/requests', method='post')
+        form(action='/requests', method='post', class="inline")
           input(type='hidden' name='userId' value='#{user.id}')
           input(type='hidden' name='spaceId' value='#{spaces[i].id}')
           input(type='submit', value='Request this space' id='request')
