@@ -22,20 +22,17 @@ describe('Making a Request', function(){
   beforeEach(function(done) {
     var browser = this.browser;
     this.browser
-      .fill('email',    'zombie@underworld.dead')
+      .fill('email', 'zombie@underworld.dead')
       .fill('password', 'eat-the-living')
       .pressButton('Submit', done);
   });
 
-  it('has a title and a button', function(){
+  it('has a title and a button', function(done){
     var browser = this.browser;
     assert.ok(browser.success);
-    assert.equal(browser.text('a.button#request'), 'Make a Request');
-  });
+    assert.equal(browser.text('a.button.request'), 'Make a Request');
 
-  it('navigates to making a request', function(done){
-    var browser = this.browser;
-    browser.clickLink('Make a Request').then(function(){
+    browser.clickLink('Make a Request').then(function(done){
       assert.ok(browser.success);
       assert.equal(browser.text('h2'), 'Make a new Request');
     }).then(done, done);

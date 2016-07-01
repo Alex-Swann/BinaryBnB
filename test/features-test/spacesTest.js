@@ -24,7 +24,7 @@ describe("Spaces view page", function () {
   it('has a title and a button', function () {
     assert.ok(this.browser.success);
     assert.equal(this.browser.text('h2'), "Spaces");
-    assert.equal(this.browser.text('a.button'), 'List a space');
+    assert.equal(this.browser.text('a.button.space'), 'List a space');
   });
 
   it('navigates to add a new space', function (done) {
