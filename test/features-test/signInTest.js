@@ -30,6 +30,8 @@ describe('When logged in', function() {
     this.browser.assert.element('form');
     this.browser.assert.element('#SignOut');
   });
+
+  it
 });
 
 describe('When logged out', function(){

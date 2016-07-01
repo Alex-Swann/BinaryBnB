@@ -3,8 +3,8 @@ block content
   - if(user)
     form(action='/signOut', method='post')
       input(type='submit', value='Sign Out' id='SignOut')
-      #welcomeUser
-        | Welcome #{user.name}
+    #welcomeUser
+      | Welcome #{user.name}
 
     a.button(href="spaces/new") List a space
 
