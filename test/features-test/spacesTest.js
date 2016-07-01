@@ -11,7 +11,14 @@ require('../globalBefore');
 describe("Spaces view page", function () {
 
   beforeEach(function (done){
-    this.browser.visit('/spaces', done);
+    var browser = this.browser;
+      browser.visit('/new').then(function(){
+          browser.fill('email', 'zombie@underworld.dead')
+                 .fill('password', 'eat-the-living')
+                 .pressButton('Submit', function(err){
+                  done();
+                  });
+      });
   });
 
   it('has a title and a button', function () {

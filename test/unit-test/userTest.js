@@ -1,20 +1,16 @@
 var expect  = require("chai").expect;
-var thinky = require('../util/thinky.js');
+var thinky = require('../../util/thinky.js');
 var r = thinky.r;
 var type = thinky.type;
-var user = require('../models/User');
+var user = require('../../models/User');
 
-require('./globalBefore');
+require('../globalBefore');
 
 
 
 
 describe('User', function(){
-
-    // beforeEach(function()
-    //
-    // )
-
+  
     it('should save a new user', function(done){
       var req =  {
             body: {
@@ -33,8 +29,4 @@ describe('User', function(){
   		}, 100 );
       done();
     });
-
-//     it('should log in a new user', function() {
-//
-//     });
 });
