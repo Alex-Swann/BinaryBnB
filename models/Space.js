@@ -10,20 +10,23 @@ var Space = thinky.createModel("spaces", {
   description: String,
   price: Number,
   availablefrom: String,
-  availableto: String
+  availableto: String,
+  userId: String
 });
 
-exports.create = function(req, res) {
+
+Space.create = function(req, res) {
   Space.save({
     name: req.body.name,
     description: req.body.description,
     price: req.body.price,
     availablefrom: req.body.availablefrom,
-    availableto: req.body.availableto
+    availableto: req.body.availableto,
+    userId: req.body.userId
   });
 };
 
-exports.fetch = function(req, res) {
+Space.fetch = function(req, res) {
   Space.run().then(function(spaces) {
     res.render('spaces/index', { title: 'Spaces', spaces: spaces,  user: req.session.object });
   });
@@ -36,3 +39,9 @@ exports.get = function(req, res) {
   });
 
 };
+
+module.exports = Space;
+
+var User = require('./User');
+
+Space.belongsTo(User, 'user', 'userId', 'id');

@@ -1,3 +1,4 @@
+/* jshint node: true */
 process.env.NODE_ENV = 'test';
 var app =  require('../../app');
 var Browser = require('zombie');
@@ -30,7 +31,6 @@ describe('When logged in', function() {
     this.browser.assert.element('form');
     this.browser.assert.element('#SignOut');
   });
-
 });
 
 describe('When logged out', function(){

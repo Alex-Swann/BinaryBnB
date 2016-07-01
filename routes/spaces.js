@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/new', function(req, res, next) {
-  res.render('spaces/new', { title: 'List a new space' });
+  res.render('spaces/new', { title: 'List a new space',  user: req.session.object });
 });
 
 router.post('/new', function(req, res, next) {

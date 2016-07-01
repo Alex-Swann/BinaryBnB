@@ -3,6 +3,7 @@ var thinky = require('../../util/thinky');
 var r = thinky.r;
 var type = thinky.type;
 var space = require("../../models/Space");
+var session = require('express-session')
 require('../globalBefore');
 
 describe("Space Unit test", function() {
@@ -14,10 +15,11 @@ describe("Space Unit test", function() {
 		    description: "Lad pad",
 		    price: "130.03",
 		    availablefrom: "12/03/2013",
-		    availableto: "12/03/2015"
+		    availableto: "12/03/2015",
+		    userId: "1"
 			}
 		};
-
+		// req.session.object = {id: 1};
 		space.create(req);
 
 		setTimeout( function () {
