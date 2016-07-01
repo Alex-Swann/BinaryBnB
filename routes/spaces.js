@@ -5,7 +5,6 @@ var space = require('../models/Space');
 
 router.get('/', function(req, res, next) {
   space.fetch(req, res);
-  // res.render('spaces/index', { title: 'Spaces', user: req.session.object });
 });
 
 router.get('/new', function(req, res, next) {

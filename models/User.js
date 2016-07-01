@@ -24,12 +24,9 @@ exports.create = function (req, res) {
 
 exports.authenticate = function (req, res) {
   	User.filter({ "email": req.body.email }).run().then(function(people) {
-			for (var i = 0; i < people.length; i++) {
-				if (people[i].password === req.body.password) {
-					res.currentUser = people[i];
-          req.session.object = res.currentUser
+				if (people[0].password === req.body.password) {
+          req.session.object = people[0];
           res.redirect('/spaces');
 				}
-			}
 		});
 };
