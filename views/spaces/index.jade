@@ -6,12 +6,17 @@ block content
     #welcomeUser
       | Welcome #{user.name}
 
-    a.button(href="spaces/new") List a space
+    a.button(href="spaces/new", class='space') List a space
+
 
   ul#spaces
     - for (var i = 0; i < spaces.length; i++)
       li
-        h4.name #{spaces[i].name}
+        h4 #{spaces[i].name}
+        form(action='/requests', method='post')
+          input(type='hidden' name='userId' value='#{user.id}')
+          input(type='hidden' name='spaceId' value='#{spaces[i].id}')
+          input(type='submit', value='Request this space' id='request')
         ul
           li
             | Price: £

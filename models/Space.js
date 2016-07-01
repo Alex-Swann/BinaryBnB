@@ -1,3 +1,4 @@
+/* jshint node: true */
 'use strict';
 
 var thinky = require('../util/thinky');
@@ -28,12 +29,20 @@ Space.create = function(req, res) {
 Space.fetch = function(req, res) {
   Space.run().then(function(spaces) {
     res.render('spaces/index', { title: 'Spaces', spaces: spaces,  user: req.session.object });
-  })
+  });
+
+};
+
+Space.get = function(req, res) {
+  Space.run().then(function(space) {
+    res.render('requests/new', { title: 'Requests', space: space,  user: req.session.object});
+  });
 
 };
 
 module.exports = Space;
 
 var User = require('./User');
-
+var Request = require('./Request');
 Space.belongsTo(User, 'user', 'userId', 'id');
+Space.hasMany(Request, 'requests', 'id', 'requestId');
