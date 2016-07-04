@@ -22,19 +22,31 @@ describe("Spaces view page", function () {
     });
   });
 
-  it('has a title and a button', function () {
+  it('reaches the page', function () {
     assert.ok(this.browser.success);
+  });
+  
+  it('has a title', function () {
     assert.equal(this.browser.text('h2'), "Spaces");
+  });
+  
+  it('has a button', function () {
     assert.equal(this.browser.text('a.button'), 'List a space');
   });
 
-  it('navigates to add a new space', function (done) {
+  it('navigates to add a new space successfully', function (done) {
     var browser = this.browser;
     browser.clickLink('List a space').then(function () {
       assert.ok(browser.success);
+    }).then(done, done);
+  });
+
+  it('navigates to add a new space page', function (done) {
+    var browser = this.browser;
+    browser.clickLink('List a space').then(function () {
       assert.equal(browser.text('h2'), "List a new space");
     }).then(done, done);
-    });
+  });
 
     it('has a form', function(done) {
       var browser = this.browser;
@@ -64,6 +76,7 @@ describe("Spaces view page", function () {
           assert.equal(this.browser.text('#spaces li:nth-child(1) ul li:nth-child(2) span'), 'Mad chill cribz YO');
           assert.equal(this.browser.text('#spaces li:nth-child(1) ul li:nth-child(3) span.availablefrom'), '30/06/2016');
           assert.equal(this.browser.text('#spaces li:nth-child(1) ul li:nth-child(3) span.availableto'), '30/07/2016');
-        })
+        });
+
 
       });

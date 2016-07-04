@@ -17,7 +17,7 @@ router.post('/new', function(req, res, next) {
 });
 
 router.get('/mySpaces', function(req, res, next) {
-  space.fetchMine(req, res, 'spaces/mySpaces', 'MySpaces');
+  space.fetchMine(req, res, 'spaces/mySpaces', 'My Spaces');
 });
 
 
