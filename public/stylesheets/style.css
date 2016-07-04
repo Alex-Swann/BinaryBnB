@@ -89,3 +89,23 @@ input[type='submit'].request{
   font-size: 14px;
   margin: 0;
 }
+
+ul h4{
+  margin: 5px 0
+}
+li {
+  list-style: none;
+}
+.space {
+    margin: 10px;
+    border: 1px solid #d8d2c8;
+    padding: 12px;
+}
+.space ul {
+  padding: 0 11px;
+}
+
+.space img {
+    float: right;
+    margin: 5px 0;
+}

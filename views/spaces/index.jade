@@ -6,7 +6,8 @@ block content
 
   ul#spaces
     - for (var i = 0; i < spaces.length; i++)
-      li
+      li.space
+        img(src='http://lorempixel.com/70/70/city/')
         h4 
           | #{spaces[i].name}
           -if(user)
@@ -19,10 +20,10 @@ block content
             | Price: £
             span.price #{spaces[i].price}
           li
-            | Description:
+            | Description:&nbsp;
             span.description #{spaces[i].description}
           li
-            | Availability:
+            | Availability:&nbsp;
             span.availablefrom #{spaces[i].availablefrom}
-            | -
+            | &nbsp;-&nbsp;
             span.availableto #{spaces[i].availableto}
