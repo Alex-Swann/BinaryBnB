@@ -9,7 +9,7 @@ router.post('/new', function(req, res, next){
 });
 
 router.post('/', function(req, res, next){
-  res.render('requests/new', { title: 'Requests', spaceId: req.body.spaceId,  userId: req.body.userId})
+  res.render('requests/new', { title: 'Make a new Request', spaceId: req.body.spaceId,  userId: req.body.userId})
 });
 
 

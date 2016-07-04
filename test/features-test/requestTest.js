@@ -9,44 +9,43 @@ var r = thinky.r;
 var type = thinky.type;
 var request = require("request");
 var http = require("http");
-var user = require('../../models/User');
+var space = require('../../models/Space');
 require('../globalBefore');
 
 describe('Making a Request', function(){
-
-  before(function(done){
-    var browser = this.browser;
-    this.browser.visit('/new', done);
-  });
+  before(function () {
+    var spaceReq =  {
+      body: {
+        name: "Fleeky Crib",
+        description: "Mad party house, bling and bitches",
+        price: "55.03",
+        availablefrom: "2/03/2013",
+        availableto: "12/03/2015",
+        userId: "1"
+      }
+    };
+    space.create(spaceReq);
+  })
 
   beforeEach(function(done) {
     var browser = this.browser;
-    this.browser
-      .fill('email', 'zombie@underworld.dead')
+    browser.visit('/new').then(function(){
+      browser.fill('email', 'zombie@underworld.dead')
       .fill('password', 'eat-the-living')
-      .pressButton('Submit', done);
+      .pressButton('Submit', function(err){
+        done();
+      });
+    });
   });
 
   it('has a title and a button', function(done){
     var browser = this.browser;
     assert.ok(browser.success);
-    assert.equal(browser.text('a.button.request'), 'Make a Request');
 
-    browser.clickLink('Pimp cribz YO').then(function(done){
+    browser.click('input.request').then(function(done){
       assert.ok(browser.success);
       assert.equal(browser.text('h2'), 'Make a new Request');
     }).then(done, done);
-  });
-
-  it('can make a request', function(){
-    var browser = this.browser;
-    browser.clickLink('Make a Request').then(function(){
-      browser.select('requests', 'Pimp cribz YO');
-    }).then(done, done);
+    });
 
   });
-
-
-
-
-});

@@ -13,7 +13,7 @@ before(function(done) {
 	this.server = http.createServer(app).listen(3000);
 	this.browser = new Browser({site: 'http://localhost:3000'});
 
-  var req =  {
+  var userReq =  {
         body: {
           name: 'KLAX',
           username: 'alex427',
@@ -21,7 +21,6 @@ before(function(done) {
           password: 'eat-the-living'
         }
       };
-
-  user.create(req);
+  user.create(userReq);
 	done();
 });
