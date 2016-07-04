@@ -26,19 +26,19 @@ Space.create = function(req, res) {
   });
 };
 
-Space.fetch = function(req, res) {
-  Space.run().then(function(spaces) {
-    res.render('spaces/index', { title: 'Spaces', spaces: spaces,  user: req.session.object });
-  });
 
-};
+Space.fetch = function(req, res, route, title) {
+    Space.run().then(function(spaces) {
+      res.render(route, { title: title , spaces: spaces,  user: req.session.object });
+    });
+}
 
-Space.get = function(req, res) {
-  Space.run().then(function(space) {
-    res.render('requests/new', { title: 'Requests', space: space,  user: req.session.object});
-  });
+Space.fetchMine = function(req, res, route, title) {
+    Space.filter({ "userId": req.session.object.id }).run().then(function(spaces) {
+      res.render(route, { title: title , spaces: spaces,  user: req.session.object });
+    });
+}
 
-};
 
 module.exports = Space;
 

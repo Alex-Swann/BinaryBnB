@@ -1,0 +1,22 @@
+extends ../layout.jade
+block content
+  h2 #{title}
+  - if(user)
+
+
+  ul#spaces
+    - for (var i = 0; i < spaces.length; i++)
+      li
+        h4 #{spaces[i].name}
+        ul
+          li
+            | Price: £
+            span.price #{spaces[i].price}
+          li
+            | Description:
+            span.description #{spaces[i].description}
+          li
+            | Availability:
+            span.availablefrom #{spaces[i].availablefrom}
+            | -
+            span.availableto #{spaces[i].availableto}
