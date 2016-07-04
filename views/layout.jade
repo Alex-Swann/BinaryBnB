@@ -11,6 +11,7 @@ html
         -if(user)
           form(id='SignOutForm', class="inline" action='/signOut', method='post')
             input(type='submit', value='Sign Out' id='SignOut')
+          a(href="/spaces/mySpaces") My Spaces
         -else
           a(href="/new") Login
           a(href="/") Register
