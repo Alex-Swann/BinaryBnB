@@ -27,8 +27,7 @@ describe('When logged in', function() {
   });
 
   it('displays name', function(){
-    this.browser.assert.text('#welcomeUser', 'Welcome KLAX');
-    this.browser.assert.element('form');
+    this.browser.assert.element('form#SignOutForm');
     this.browser.assert.element('#SignOut');
   });
 
@@ -43,8 +42,7 @@ describe('When logged out', function(){
   });
 
   it('does not display name', function(done){
-    expect(this.browser.query("#welcomeUser")).not.to.exist;
-    expect(this.browser.query("a.button")).not.to.exist;
+    expect(this.browser.query("#SignOut")).not.to.exist;
     done();
   });
 });

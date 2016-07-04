@@ -2,21 +2,22 @@ extends ../layout.jade
 block content
   h2 #{title}
   - if(user)
-
-
+  
   ul#spaces
     - for (var i = 0; i < spaces.length; i++)
-      li
-        h4 #{spaces[i].name}
+      li.space
+        img(src='http://lorempixel.com/70/70/city/')
+        h4 
+          | #{spaces[i].name}
         ul
           li
             | Price: £
             span.price #{spaces[i].price}
           li
-            | Description:
+            | Description:&nbsp;
             span.description #{spaces[i].description}
           li
-            | Availability:
+            | Availability:&nbsp;
             span.availablefrom #{spaces[i].availablefrom}
-            | -
+            | &nbsp;-&nbsp;
             span.availableto #{spaces[i].availableto}

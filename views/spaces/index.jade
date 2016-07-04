@@ -6,21 +6,24 @@ block content
 
   ul#spaces
     - for (var i = 0; i < spaces.length; i++)
-      li
-        h4 #{spaces[i].name}
-        form(action='/requests', method='post', class="inline")
-          input(type='hidden' name='userId' value='#{user.id}')
-          input(type='hidden' name='spaceId' value='#{spaces[i].id}')
-          input(type='submit', value='Request this space' id='request')
+      li.space
+        img(src='http://lorempixel.com/70/70/city/')
+        h4 
+          | #{spaces[i].name}
+          -if(user)
+            form(action='/requests', method='post', class="inline")
+              input(type='hidden' name='userId' value='#{user.id}')
+              input(type='hidden' name='spaceId' value='#{spaces[i].id}')
+              input(type='submit', value='Request this space' class='request')
         ul
           li
             | Price: £
             span.price #{spaces[i].price}
           li
-            | Description:
+            | Description:&nbsp;
             span.description #{spaces[i].description}
           li
-            | Availability:
+            | Availability:&nbsp;
             span.availablefrom #{spaces[i].availablefrom}
-            | -
+            | &nbsp;-&nbsp;
             span.availableto #{spaces[i].availableto}

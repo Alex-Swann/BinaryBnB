@@ -32,7 +32,7 @@ describe('User visits signup page', function() {
     });
 
     it('should see welcome page', function() {
-      this.browser.assert.text('p', 'Welcome to BnB sign in Sign In Page');
+      this.browser.assert.text('h2', 'Sign In');
     });
 
     it('adds a user to the database', function() {

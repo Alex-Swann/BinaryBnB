@@ -3,7 +3,7 @@ block content
   - if(user)
     h2 #{title}
 
-    form(action='/spaces/new', method='post')
+    form(action='/spaces/new', method='post', id="newSpace")
       input(type="hidden" name="userId" value="#{user.id}")
       label(for='name') Name:
       input(type='text', name='name', placeholder='Name')
