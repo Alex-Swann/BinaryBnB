@@ -13,7 +13,7 @@ router.post('/', function(req, res, next){
 });
 
 router.get('/new', function(req,res,next){
-  res.render('sessions/signIn', {title: 'BnB sign in'});
+  res.render('sessions/signIn', {title: 'Sign In'});
 });
 
 router.post('/new', function(req,res,next){
